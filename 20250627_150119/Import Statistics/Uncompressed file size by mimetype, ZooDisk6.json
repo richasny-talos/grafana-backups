@@ -1,0 +1,228 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "elasticsearch",
+        "uid": "000000003"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 22,
+        "w": 14,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "Sum"
+          }
+        ]
+      },
+      "pluginVersion": "9.5.7",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "mime_type.keyword",
+              "id": "2",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "1",
+                "size": "20"
+              },
+              "type": "terms"
+            }
+          ],
+          "datasource": {
+            "type": "elasticsearch",
+            "uid": "000000003"
+          },
+          "metrics": [
+            {
+              "field": "raw_file_size",
+              "id": "1",
+              "settings": {
+                "missing": "0",
+                "script": "_value / (1024*1024*1024)"
+              },
+              "type": "sum"
+            },
+            {
+              "id": "3",
+              "type": "count"
+            }
+          ],
+          "query": "fields.logtype:\"import\" AND tag:$feed AND raw_file_size:>$rsize",
+          "refId": "A",
+          "timeField": "import_timestamp"
+        }
+      ],
+      "title": "Top 20 raw file size by mimetype (Sum in GB)",
+      "type": "table"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "elasticsearch",
+          "uid": "000000003"
+        },
+        "definition": "{\"find\": \"terms\", \"field\": \"tag\"}",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Origin",
+        "multi": true,
+        "name": "feed",
+        "options": [],
+        "query": "{\"find\": \"terms\", \"field\": \"tag\"}",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": "200000000",
+          "value": "200000000"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "Raw size",
+        "multi": false,
+        "name": "rsize",
+        "options": [
+          {
+            "selected": false,
+            "text": "50000000",
+            "value": "50000000"
+          },
+          {
+            "selected": false,
+            "text": "100000000",
+            "value": "100000000"
+          },
+          {
+            "selected": false,
+            "text": "150000000",
+            "value": "150000000"
+          },
+          {
+            "selected": true,
+            "text": "200000000",
+            "value": "200000000"
+          },
+          {
+            "selected": false,
+            "text": "300000000",
+            "value": "300000000"
+          },
+          {
+            "selected": false,
+            "text": "400000000",
+            "value": "400000000"
+          },
+          {
+            "selected": false,
+            "text": "500000000",
+            "value": "500000000"
+          }
+        ],
+        "query": "50000000,100000000,150000000,200000000,300000000,400000000,500000000",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      }
+    ]
+  },
+  "time": {
+    "from": "2023-07-27T15:00:00.000Z",
+    "to": "2023-12-07T17:59:59.000Z"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Uncompressed file size by mimetype, ZooDisk6",
+  "uid": "abcadbcd-c898-4328-baac-8541c263546c",
+  "version": 1,
+  "weekStart": ""
+}
