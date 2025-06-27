@@ -1,0 +1,424 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "iteration": 1657208810783,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "elasticsearch",
+        "uid": "sEvhWwj7k"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": [],
+          "unit": "percent"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Average histogram.90_100"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#440154ff",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "displayName",
+                "value": "90-100"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Average histogram.80_90"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#482878ff",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "displayName",
+                "value": "80-90"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Average histogram.70_80"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#3e4a89ff",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "displayName",
+                "value": "70-80"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Average histogram.60_70"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#31688eff",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "displayName",
+                "value": "60-70"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Average histogram.50_60"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#26828eff",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "displayName",
+                "value": "50-60"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Average histogram.40_50"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#1f9e89ff",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "displayName",
+                "value": "40-50"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Average histogram.30_40"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#35b779ff",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "displayName",
+                "value": "30-40"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Average histogram.20_30"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#6dcd59ff",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "displayName",
+                "value": "20-30"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Average histogram.10_20"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#b4de2cff",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "displayName",
+                "value": "10-20"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Average histogram.0_10"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#fde725ff",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "displayName",
+                "value": "0-10"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 22,
+        "w": 23,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "displayLabels": [
+          "name"
+        ],
+        "legend": {
+          "displayMode": "list",
+          "placement": "right",
+          "values": [
+            "percent"
+          ]
+        },
+        "pieType": "donut",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "none"
+        }
+      },
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "1h",
+                "min_doc_count": "0",
+                "timeZone": "utc",
+                "trimEdges": "0"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "elasticsearch",
+            "uid": "sEvhWwj7k"
+          },
+          "metrics": [
+            {
+              "field": "histogram.0_10",
+              "id": "1",
+              "settings": {},
+              "type": "avg"
+            },
+            {
+              "field": "histogram.10_20",
+              "id": "3",
+              "type": "avg"
+            },
+            {
+              "field": "histogram.20_30",
+              "id": "4",
+              "type": "avg"
+            },
+            {
+              "field": "histogram.30_40",
+              "id": "5",
+              "type": "avg"
+            },
+            {
+              "field": "histogram.40_50",
+              "id": "6",
+              "type": "avg"
+            },
+            {
+              "field": "histogram.50_60",
+              "id": "7",
+              "type": "avg"
+            },
+            {
+              "field": "histogram.60_70",
+              "id": "8",
+              "type": "avg"
+            },
+            {
+              "field": "histogram.70_80",
+              "id": "9",
+              "type": "avg"
+            },
+            {
+              "field": "histogram.80_90",
+              "id": "10",
+              "type": "avg"
+            },
+            {
+              "field": "histogram.90_100",
+              "id": "11",
+              "type": "avg"
+            }
+          ],
+          "query": "rule_name.keyword:$RuleName AND provider:$Provider",
+          "refId": "A",
+          "timeField": "@timestamp"
+        }
+      ],
+      "title": "IPAS Score Distribution",
+      "type": "piechart"
+    }
+  ],
+  "schemaVersion": 34,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "ACT_NOW_CAPS",
+          "value": "ACT_NOW_CAPS"
+        },
+        "datasource": {
+          "type": "elasticsearch",
+          "uid": "sEvhWwj7k"
+        },
+        "definition": "{\"find\": \"terms\", \"field\": \"rule_name.keyword\"}",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Rule Name",
+        "multi": false,
+        "name": "RuleName",
+        "options": [],
+        "query": "{\"find\": \"terms\", \"field\": \"rule_name.keyword\"}",
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      },
+      {
+        "allValue": "",
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "elasticsearch",
+          "uid": "sEvhWwj7k"
+        },
+        "definition": "{\"find\": \"terms\", \"field\": \"provider\"}\t",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Provider",
+        "multi": true,
+        "name": "Provider",
+        "options": [],
+        "query": "{\"find\": \"terms\", \"field\": \"provider\"}\t",
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "IPAS Score Distribution",
+  "uid": "mOJnKoenz",
+  "version": 1,
+  "weekStart": ""
+}
